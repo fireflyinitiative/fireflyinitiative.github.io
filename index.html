@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Firefly Initiative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Shadows+Into+Light&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles and font declarations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e; /* Deep purple background */
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .shadows-into-light {
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        .montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Custom Firefly Animation */
+        .firefly {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffa726; /* Warm amber */
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.7);
+            animation: glow 20s infinite;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        /* Adds a glow effect to the icon */
+        .icon-glow {
+            filter: drop-shadow(0 0 10px #ffa726);
+        }
+
+        /* Keyframes for the glowing effect */
+        @keyframes glow {
+            0% { transform: scale(1); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        /* Keyframes for firefly movement */
+        @keyframes move-firefly {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(15vw, -5vh); }
+            50% { transform: translate(30vw, 10vh); }
+            75% { transform: translate(10vw, 25vh); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body class="bg-[#1a1a2e] text-[#e0e0e0] font-inter">
+
+    <!-- Firefly container for animations -->
+    <div id="firefly-container"></div>
+
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 relative z-20">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="montserrat text-5xl md:text-7xl font-bold text-[#ffa726] mb-0 flex items-center justify-center space-x-4">
+                <!-- Firefly Icon -->
+                <img src="https://lh3.googleusercontent.com/d/1MmYsutovtMdT9pNnlsMRVn7d9WXu2gxP" alt="Firefly Initiative Logo for Dark Backgrounds">
+            </h1>
+        </header>
+
+        <!-- Mission Section -->
+        <main class="max-w-4xl mx-auto space-y-16">
+            <section class="bg-[#2a2a44] p-8 md:p-12 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726]">
+                <h3 class="montserrat text-3xl md:text-4xl text-[#ffa726] mb-4 text-center">Our Mission: A Guiding Light</h3>
+                <p class="text-lg text-center leading-relaxed">
+                    The Firefly Initiative is founded on the belief that everyone deserves access to compassionate support and the resources necessary to make informed decisions about their own health and well-being. Our mission is to provide holistic harm reduction resource programs for safe supplies, resource education, and peer support to unhoused and low-income individuals facing substance use disorder. We support people in making their own choices with dignity and autonomy.
+                </p>
+                <p class="text-lg text-center leading-relaxed mt-4">
+                    The firefly, a familiar symbol in North Georgia, represents hope, guidance, and resilience. We are committed to being a steady, compassionate source of support for our neighbors as they navigate their personal journeys and systemic challenges.
+                </p>
+            </section>
+
+            <!-- Values Section -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="bg-[#2a2a44] p-8 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(255,167,38,0.7)] transition-all duration-700">
+                    <h4 class="montserrat text-2xl text-[#ffa726] mb-2">Respect</h4>
+                    <p>We honor the inherent worth and dignity of every individual, championing their autonomy and approaching all interactions with empathy and compassion.</p>
+                </div>
+                <div class="bg-[#2a2a44] p-8 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(255,167,38,0.7)] transition-all duration-700">
+                    <h4 class="montserrat text-2xl text-[#ffa726] mb-2">Equity</h4>
+                    <p>We address systemic barriers and work to ensure that everyone has fair access to the resources they need to thrive.</p>
+                </div>
+                <div class="bg-[#2a2a44] p-8 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(255,167,38,0.7)] transition-all duration-700">
+                    <h4 class="montserrat text-2xl text-[#ffa726] mb-2">Empowerment</h4>
+                    <p>We support individuals in building the skills and confidence to make self-directed choices about their own health and well-being.</p>
+                </div>
+                <div class="bg-[#2a2a44] p-8 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(255,167,38,0.7)] transition-all duration-700">
+                    <h4 class="montserrat text-2xl text-[#ffa726] mb-2">Collaboration</h4>
+                    <p>We work alongside our community partners, stakeholders, and participants toward shared goals.</p>
+                </div>
+            </section>
+
+            <!-- Transition Section -->
+            <section class="bg-[#2a2a44] p-8 md:p-12 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726]">
+                <h3 class="montserrat text-3xl md:text-4xl text-[#ffa726] mb-4 text-center">A New Chapter, The Same Commitment</h3>
+                <p class="text-lg text-center leading-relaxed">
+                    While our name has changed from Jubilee Harm Reduction, our mission to provide compassionate care and resources remains our top priority. The transition to The Firefly Initiative is a positive step forward, built to strengthen our ability to serve the Athens community for years to come.
+                </p>
+                <p class="text-lg text-center leading-relaxed mt-4">
+                    Our commitment to our neighbors and the people we serve is unwavering. You can expect a seamless process with no disruption to the vital resources and support you have come to rely on. We are evolving, not ending, and are dedicated to continuing to be a guiding light on the path toward self-directed choices and well-being.
+                </p>
+            </section>
+
+            <!-- Firefly Logo -->
+            <div class="relative flex justify-center my-[-2rem] z-20">
+                <img src="https://lh3.googleusercontent.com/d/19l1wwzxg_KlFFrrPjE_WG6YKBAgMRVBh" alt="The Firefly Initiative Logo" class="w-24 h-24 icon-glow transform rotate-25">
+            </div>
+
+            <!-- CTA Section -->
+            <section class="text-center bg-[#2a2a44] p-8 md:p-12 rounded-2xl shadow-lg border border-opacity-30 border-[#ffa726]">
+                <h3 class="montserrat text-3xl md:text-4xl text-[#ffa726] mb-4">Get Involved & Shine a Light with Us</h3>
+                <p class="text-lg leading-relaxed mb-6">
+                    Whether you have a few hours to give or want to provide a one-time gift, every act of support helps us continue our vital work in Athens, GA. We believe in the power of our community to care for its members, and we can’t do this work without you.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="#" class="bg-[#ffa726] text-[#1a1a2e] font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                        Join Our Team
+                    </a>
+                    <a href="#" class="bg-[#ffa726] text-[#1a1a2e] font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                        Give Today
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('firefly-container');
+            const numFireflies = 30; // A larger number for a fuller effect
+
+            for (let i = 0; i < numFireflies; i++) {
+                const firefly = document.createElement('div');
+                firefly.className = 'firefly';
+                
+                // Randomize starting position
+                firefly.style.top = `${Math.random() * 100}vh`;
+                firefly.style.left = `${Math.random() * 100}vw`;
+                
+                // Randomize animation duration and delay for a less synchronized effect
+                firefly.style.animationDuration = `${10 + Math.random() * 10}s`;
+                firefly.style.animationDelay = `${Math.random() * 10}s`;
+                
+                container.appendChild(firefly);
+            }
+        });
+    </script>
+</body>
+</html>
